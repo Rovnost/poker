@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Jogo de Poker!!</title>
+
+  </head>
+  <body>
+
+ <SCRIPT LANGUAGE="JavaScript">
+
+     console.log("Bem Vindo ao Jogo de Poker");
+
+    // Definindo o baralho
+
+    var selo = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+    var naipe = ["Espadas", "Ouros", "Copas", "Paus"];
+    var maoJogador1 = [];
+    var maoJogador2 = [];
+
+    //Distribuir cartas
+
+
+    var x = Math.floor((Math.random() * 14) + 0);
+    var y = Math.floor((Math.random() * 4) + 0);
+
+    var x2 = Math.floor((Math.random() * 14) + 0);
+    var y2 = Math.floor((Math.random() * 4) + 0);
+
+    var carta1 = selo[x] + " de " + naipe[y];
+    console.log(carta1);
+
+    var carta2 = selo[x2] + " de " + naipe[y2];
+    console.log(carta2);
+
+    if(carta1 == carta2){
+        console.log("Você já tem uma dupla!");
+    }
+
+    
+	 
+</SCRIPT>
+
+  </body>
+
+</html>
