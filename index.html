@@ -18,33 +18,84 @@
 
     var selo = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
     var naipe = ["Espadas", "Ouros", "Copas", "Paus"];
-    var maoJogador1 = [];
-    var maoJogador2 = [];
+    var maoJogador1 = ["", ""];
+    var maoJogador2 = ["", ""];
 
     //Distribuir cartas
 
+    function definirSelo(){
+        var selo = Math.floor((Math.random() * 14) + 0);
+        return selo;
+    }
 
-    var x = Math.floor((Math.random() * 14) + 0);
-    var y = Math.floor((Math.random() * 4) + 0);
+    function definirNaipe(){
+        var naipe = Math.floor((Math.random() * 4) + 0);
+        return naipe;
+    }
 
-    var x2 = Math.floor((Math.random() * 14) + 0);
-    var y2 = Math.floor((Math.random() * 4) + 0);
+    // Jogador 1
+    primeiraCartaUser1 = selo[definirSelo()] + " de " + naipe[definirNaipe()];
+    segundaCartaUser1 = selo[definirSelo()] + " de " + naipe[definirNaipe()];
+    // Jogador 2
+    primeiraCartaUser2 = selo[definirSelo()] + " de " + naipe[definirNaipe()];
+    segundaCartaUser2 = selo[definirSelo()] + " de " + naipe[definirNaipe()];
 
-    var carta1 = selo[x] + " de " + naipe[y];
-    //console.log(carta1);
+    // Atribuindo as cartas
+    maoJogador1[0] = primeiraCartaUser1;
+    maoJogador1[1] = segundaCartaUser1;
+    maoJogador2[0] = primeiraCartaUser2;
+    maoJogador2[1] = segundaCartaUser2;
 
-    var carta2 = selo[x2] + " de " + naipe[y2];
-   // console.log(carta2);
+    console.log("Cartas do Jogador 1: " + maoJogador1);
+    console.log("Cartas do Jogador 2: " + maoJogador2);
+
+    // Cartas públicas
+    var i;
+    var cartasDaMesa = ["", "", "", "", ""]
+    console.log("Cartas da mesa:");
+    for(i = 0; i <=4; i++){
+        cartasDaMesa[i] = selo[definirSelo()] + " de " + naipe[definirNaipe()];
+        console.log(cartasDaMesa[i]);
+    }
+
+    //Validações
+
+    //Flush
+    var contOuros = 0, contCopas = 0, contEspadas = 0, contPaus = 0, j;
+    var naipeControl = "";
+    for(j = 0; j <=4; j++){
+        
+        if(cartasDaMesa[j].match("Ouros")){
+            contOuros++;
+        }
+        else if(cartasDaMesa[j].match("Paus")){
+            contPaus++;
+        }
+        else if(cartasDaMesa[j].match("Copas")){
+            contCopas++;
+        }
+        else if(cartasDaMesa[j].match("Espadas")){
+            contEspadas++;
+        }
+        else{
+
+        }
+
+        if(contOuros > 3){
+            
+        }
+
+        if(contOuros > 3 || contPaus > 3 || contCopas > 3 || contEspadas > 3){
+            if(maoJogador1[0].match("Ouros")){
+
+            }
+        }
+
+    }
 
     if(carta1 == carta2){
         console.log("Você já tem uma dupla!");
     }
-
-    var n = Math.floor((Math.random() * 14) + 0);
-    var m = Math.floor((Math.random() * 4) + 0);
-
-    var n2 = Math.floor((Math.random() * 14) + 0);
-    var m2 = Math.floor((Math.random() * 4) + 0);
 
     //var carta1b = selo[n] + " de " + naipe[m];
     var carta1b = [selo[n] , naipe[m]];
@@ -56,23 +107,20 @@
     
     verifacaCarta(carta1b,carta2b);
 
-    
-    
-
     //distribuir cartas públicas
 
     var cartasPublicas = [5];
 
     function verifacaCarta(cartaA, cartaB) {
+
+        for(i= 0; i < 2; i++){
+
+        }
             if(cartaA == carta){
             console.log("Você já tem uma dupla!");
         }
         
     }
-
-
-
-    
 	 
 </SCRIPT>
 
