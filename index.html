@@ -31,14 +31,46 @@
     var y2 = Math.floor((Math.random() * 4) + 0);
 
     var carta1 = selo[x] + " de " + naipe[y];
-    console.log(carta1);
+    //console.log(carta1);
 
     var carta2 = selo[x2] + " de " + naipe[y2];
-    console.log(carta2);
+   // console.log(carta2);
 
     if(carta1 == carta2){
         console.log("Você já tem uma dupla!");
     }
+
+    var n = Math.floor((Math.random() * 14) + 0);
+    var m = Math.floor((Math.random() * 4) + 0);
+
+    var n2 = Math.floor((Math.random() * 14) + 0);
+    var m2 = Math.floor((Math.random() * 4) + 0);
+
+    //var carta1b = selo[n] + " de " + naipe[m];
+    var carta1b = [selo[n] , naipe[m]];
+    console.log('carta1b  : ' + carta1b);
+
+    //var carta2b = selo[n2] + " de " + naipe[m2];
+    var carta2b = [selo[n2] , naipe[m2]];
+    console.log('carta2b  : ' + carta2);
+    
+    verifacaCarta(carta1b,carta2b);
+
+    
+    
+
+    //distribuir cartas públicas
+
+    var cartasPublicas = [5];
+
+    function verifacaCarta(cartaA, cartaB) {
+            if(cartaA == carta){
+            console.log("Você já tem uma dupla!");
+        }
+        
+    }
+
+
 
     
 	 
